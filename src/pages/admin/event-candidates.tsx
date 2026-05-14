@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, GetServerSidePropsResult } from 'next';
+import { withAdminPageAuth } from '@/lib/adminAuth';
 import { fetchEventCandidatesQueue } from '@/lib/eventCandidatesAdmin';
 
 type CandidateRow = {
@@ -18,7 +19,7 @@ type CandidateRow = {
 
 type Props = { candidates: CandidateRow[]; error?: string };
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = withAdminPageAuth(async (): Promise<GetServerSidePropsResult<Props>> => {
   try {
     const { data, error } = await fetchEventCandidatesQueue();
     if (error) return { props: { candidates: [], error: error.message } };
@@ -26,7 +27,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
   } catch (err) {
     return { props: { candidates: [], error: err instanceof Error ? err.message : 'Unknown error' } };
   }
-};
+});
 
 export default function EventCandidatesQueuePage({ candidates, error }: Props) {
   return (

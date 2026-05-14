@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, GetServerSidePropsResult } from 'next';
+import { withAdminPageAuth } from '@/lib/adminAuth';
 import { createClient } from '@supabase/supabase-js';
 
 type Stats = {
@@ -22,7 +23,7 @@ const cards = [
   { href: '/admin/snapshot-imports', label: 'Snapshot Imports', description: 'Review import workflow and ingestion outcomes.' }
 ];
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = withAdminPageAuth(async (): Promise<GetServerSidePropsResult<Props>> => {
   const url = process.env.SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   const defaultStats: Stats = { needsReview: 0, promoted: 0, rejected: 0, canonicalEvents: 0 };
@@ -51,7 +52,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
       }
     }
   };
-};
+});
 
 export default function AdminIndexPage({ stats, error }: Props) {
   return (

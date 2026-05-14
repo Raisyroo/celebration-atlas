@@ -1,4 +1,5 @@
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, GetServerSidePropsResult } from 'next';
+import { withAdminPageAuth } from '@/lib/adminAuth';
 import Link from 'next/link';
 import { useState } from 'react';
 import { fetchEventCandidateDetail } from '@/lib/eventCandidatesAdmin';
@@ -9,7 +10,7 @@ type CandidateMatch = { match_score: number; match_reason: string; recommended_a
 
 type Props = { candidate: Candidate | null; sources: CandidateSource[]; matches: CandidateMatch[]; error?: string };
 
-export const getServerSideProps: GetServerSideProps<Props> = async (ctx) => {
+export const getServerSideProps: GetServerSideProps<Props> = withAdminPageAuth(async (ctx): Promise<GetServerSidePropsResult<Props>> => {
   const id = ctx.params?.id;
   if (typeof id !== 'string') return { props: { candidate: null, sources: [], matches: [], error: 'Invalid candidate id.' } };
 
@@ -20,7 +21,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async (ctx) => {
   } catch (err) {
     return { props: { candidate: null, sources: [], matches: [], error: err instanceof Error ? err.message : 'Unknown error' } };
   }
-};
+});
 
 export default function CandidateDetailPage({ candidate, sources, matches, error }: Props) {
   const [actionMessage, setActionMessage] = useState<string | null>(null);

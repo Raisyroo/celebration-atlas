@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { requireAdminApi } from '@/lib/adminAuth';
 import { getSupabaseAdminClient } from '@/lib/supabaseAdmin';
 
 function slugify(input: string) {
@@ -46,7 +47,7 @@ async function tableExposed(url: string, key: string, tableName: string) {
   return Boolean(openApi?.paths?.[`/${tableName}`]);
 }
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     return res.status(405).json({ error: 'Method not allowed' });
@@ -152,3 +153,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(500).json({ error: err instanceof Error ? err.message : 'Unknown error' });
   }
 }
+
+
+export default requireAdminApi(handler);
