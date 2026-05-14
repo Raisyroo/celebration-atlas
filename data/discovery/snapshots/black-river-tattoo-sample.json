@@ -1,0 +1,108 @@
+{
+  "run_metadata": {
+    "run_id": "run-black-river-2026-05-13",
+    "run_date": "2026-05-13",
+    "agent_name": "Michigan Event Discovery Agent",
+    "state": "Michigan",
+    "run_type": "statewide_discovery",
+    "notes": "Manual sample snapshot for Agent 1 importer validation."
+  },
+  "discovered_sources": [
+    {
+      "source_name": "Black River Tattoo Convention Official Site",
+      "source_url": "https://www.blackrivertattooconvention.com",
+      "source_type": "official_event_website",
+      "region": "Southeast Michigan",
+      "trust_score": 0.95,
+      "priority": "high",
+      "notes": "Primary source for branding and event details."
+    },
+    {
+      "source_name": "Blue Water Convention Center Events",
+      "source_url": "https://www.bluewaterconventioncenter.com/events",
+      "source_type": "venue_calendar",
+      "region": "Southeast Michigan",
+      "trust_score": 0.88,
+      "priority": "high",
+      "notes": "Venue listing used to corroborate location details."
+    }
+  ],
+  "event_candidates": [
+    {
+      "candidate_name": "Black River Tattoo Convention",
+      "normalized_name": "Black River Tattoo Convention",
+      "slug_candidate": "black-river-tattoo-convention",
+      "event_type": "convention",
+      "category": "arts_culture",
+      "subcategory": "tattoo",
+      "city": "Port Huron",
+      "county": "St. Clair",
+      "state": "Michigan",
+      "country": "USA",
+      "venue_name": "Blue Water Convention Center",
+      "start_date": null,
+      "end_date": null,
+      "typical_month": "",
+      "typical_season": "",
+      "description": "Tattoo-focused public convention candidate discovered from official and venue sources.",
+      "official_website_candidate": "https://www.blackrivertattooconvention.com",
+      "social_links": [
+        "https://www.facebook.com/blackrivertattooconvention"
+      ],
+      "source_urls": [
+        "https://www.blackrivertattooconvention.com",
+        "https://www.bluewaterconventioncenter.com/events"
+      ],
+      "source_type": "multi_source",
+      "discovery_confidence": 0.86,
+      "semantic_notes": "Name and venue align across at least two sources; schedule dates not yet captured.",
+      "duplicate_status": "needs_review",
+      "possible_matches": [],
+      "needs_review": true
+    }
+  ],
+  "supplier_discoveries": [],
+  "duplicate_signals": [
+    {
+      "candidate_name": "Black River Tattoo Convention",
+      "possible_match_name": "Black River Tattoo Expo",
+      "match_score": 0.47,
+      "match_reason": "Shared Black River naming pattern and similar tattoo convention context.",
+      "recommended_action": "review"
+    }
+  ],
+  "raw_discoveries": [
+    {
+      "content": "Venue calendar entry references Black River Tattoo weekend without complete schedule details.",
+      "source_name": "Blue Water Convention Center Events",
+      "source_url": "https://www.bluewaterconventioncenter.com/events",
+      "source_type": "venue_calendar",
+      "potential_value": "May contain future date confirmation and ticketing links.",
+      "notes": "Requires manual follow-up when future event page is published."
+    }
+  ],
+  "data_health": {
+    "strongest_candidates": [
+      "Black River Tattoo Convention"
+    ],
+    "weakest_useful_signals": [
+      "Partial venue listing without exact dates"
+    ],
+    "possible_duplicates": [
+      "Black River Tattoo Expo"
+    ],
+    "missing_regions": [],
+    "missing_event_types": [
+      "festival",
+      "fair",
+      "parade"
+    ],
+    "recommended_next_searches": [
+      "Check official social announcements for confirmed date range",
+      "Review Port Huron tourism and chamber calendars"
+    ],
+    "source_quality_concerns": [
+      "Venue listing lacks full structured metadata for start/end date"
+    ]
+  }
+}

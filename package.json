@@ -1,0 +1,25 @@
+{
+  "name": "celebration-atlas-agent1-local-tools",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:supabase": "node scripts/test_supabase_connection.mjs",
+    "test:insert-festival": "node scripts/insert_test_festival.mjs",
+    "test:insert-event": "node scripts/insert_test_event.mjs",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.8",
+    "next": "16.2.6",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "25.8.0",
+    "@types/react": "19.2.14",
+    "typescript": "6.0.3"
+  }
+}
