@@ -1,0 +1,288 @@
+{
+  "run_metadata": {
+    "run_id": "run-michigan-statewide-2026-05-14-a",
+    "run_date": "2026-05-14",
+    "agent_name": "Michigan Event Discovery Agent",
+    "state": "Michigan",
+    "run_type": "statewide_discovery",
+    "notes": "First real statewide Michigan discovery batch using county fair, tourism, chamber, and statewide directory sources."
+  },
+  "discovered_sources": [
+    {
+      "source_name": "Allegan County Fair Official",
+      "source_url": "https://www.allegancountyfair.com",
+      "source_type": "county_fair_official",
+      "region": "West Michigan",
+      "trust_score": 0.96,
+      "priority": "high",
+      "notes": "Primary official source for Allegan County Fair."
+    },
+    {
+      "source_name": "Ionia Free Fair Official",
+      "source_url": "https://ioniafreefair.com",
+      "source_type": "county_fair_official",
+      "region": "West Michigan",
+      "trust_score": 0.96,
+      "priority": "high",
+      "notes": "Primary official source for Ionia Free Fair."
+    },
+    {
+      "source_name": "Michigan.org Events Directory",
+      "source_url": "https://www.michigan.org/events",
+      "source_type": "michigan_event_directory",
+      "region": "Statewide",
+      "trust_score": 0.84,
+      "priority": "high",
+      "notes": "Statewide tourism event directory for cross-region discovery."
+    },
+    {
+      "source_name": "Pure Michigan - Tulip Time",
+      "source_url": "https://www.michigan.org/event/tulip-time-festival",
+      "source_type": "state_tourism_listing",
+      "region": "West Michigan",
+      "trust_score": 0.86,
+      "priority": "medium",
+      "notes": "Tourism confirmation source for Tulip Time identity."
+    },
+    {
+      "source_name": "Traverse Connect Chamber Events",
+      "source_url": "https://business.traverseconnect.com/events",
+      "source_type": "chamber_calendar",
+      "region": "Northwest Michigan",
+      "trust_score": 0.78,
+      "priority": "medium",
+      "notes": "Chamber-maintained calendar used for recurring community and business-facing events."
+    },
+    {
+      "source_name": "National Cherry Festival Official",
+      "source_url": "https://www.cherryfestival.org",
+      "source_type": "official_event_website",
+      "region": "Northwest Michigan",
+      "trust_score": 0.97,
+      "priority": "high",
+      "notes": "Canonical source for National Cherry Festival."
+    },
+    {
+      "source_name": "Tulip Time Official",
+      "source_url": "https://www.tuliptime.com",
+      "source_type": "official_event_website",
+      "region": "West Michigan",
+      "trust_score": 0.97,
+      "priority": "high",
+      "notes": "Canonical source for Tulip Time Festival."
+    }
+  ],
+  "event_candidates": [
+    {
+      "candidate_name": "Allegan County Fair",
+      "normalized_name": "Allegan County Fair",
+      "slug_candidate": "allegan-county-fair",
+      "event_type": "fair",
+      "category": "agricultural",
+      "subcategory": "county_fair",
+      "city": "Allegan",
+      "county": "Allegan",
+      "state": "Michigan",
+      "country": "USA",
+      "venue_name": "Allegan County Fairgrounds",
+      "start_date": null,
+      "end_date": null,
+      "typical_month": "September",
+      "typical_season": "fall",
+      "description": "Recurring county fair featuring livestock, midway attractions, and grandstand programming.",
+      "official_website_candidate": "https://www.allegancountyfair.com",
+      "social_links": [],
+      "source_urls": [
+        "https://www.allegancountyfair.com",
+        "https://www.michigan.org/events"
+      ],
+      "source_type": "multi_source",
+      "discovery_confidence": 0.93,
+      "semantic_notes": "Strong canonical identity with official fair domain plus statewide directory support.",
+      "duplicate_status": "unique_candidate",
+      "possible_matches": [],
+      "needs_review": true
+    },
+    {
+      "candidate_name": "Ionia Free Fair",
+      "normalized_name": "Ionia Free Fair",
+      "slug_candidate": "ionia-free-fair",
+      "event_type": "fair",
+      "category": "agricultural",
+      "subcategory": "county_fair",
+      "city": "Ionia",
+      "county": "Ionia",
+      "state": "Michigan",
+      "country": "USA",
+      "venue_name": "Ionia Fairgrounds",
+      "start_date": null,
+      "end_date": null,
+      "typical_month": "July",
+      "typical_season": "summer",
+      "description": "Long-running free-admission fair with carnival, exhibits, and entertainment programming.",
+      "official_website_candidate": "https://ioniafreefair.com",
+      "social_links": [],
+      "source_urls": [
+        "https://ioniafreefair.com",
+        "https://www.michigan.org/events"
+      ],
+      "source_type": "multi_source",
+      "discovery_confidence": 0.91,
+      "semantic_notes": "Official fair site confirms stable recurring identity.",
+      "duplicate_status": "unique_candidate",
+      "possible_matches": [],
+      "needs_review": true
+    },
+    {
+      "candidate_name": "Tulip Time Festival",
+      "normalized_name": "Tulip Time Festival",
+      "slug_candidate": "tulip-time-festival",
+      "event_type": "festival",
+      "category": "cultural",
+      "subcategory": "spring_festival",
+      "city": "Holland",
+      "county": "Ottawa",
+      "state": "Michigan",
+      "country": "USA",
+      "venue_name": "Downtown Holland",
+      "start_date": null,
+      "end_date": null,
+      "typical_month": "May",
+      "typical_season": "spring",
+      "description": "Large annual celebration featuring tulip displays, cultural programming, and parades.",
+      "official_website_candidate": "https://www.tuliptime.com",
+      "social_links": [],
+      "source_urls": [
+        "https://www.tuliptime.com",
+        "https://www.michigan.org/event/tulip-time-festival"
+      ],
+      "source_type": "multi_source",
+      "discovery_confidence": 0.95,
+      "semantic_notes": "High-confidence statewide-recognized festival with official and tourism corroboration.",
+      "duplicate_status": "possible_duplicate",
+      "possible_matches": [
+        "Tulip Time"
+      ],
+      "needs_review": true
+    },
+    {
+      "candidate_name": "National Cherry Festival",
+      "normalized_name": "National Cherry Festival",
+      "slug_candidate": "national-cherry-festival",
+      "event_type": "festival",
+      "category": "community",
+      "subcategory": "food_festival",
+      "city": "Traverse City",
+      "county": "Grand Traverse",
+      "state": "Michigan",
+      "country": "USA",
+      "venue_name": "Open Space Park and Downtown Traverse City",
+      "start_date": null,
+      "end_date": null,
+      "typical_month": "July",
+      "typical_season": "summer",
+      "description": "Major annual festival with parades, air shows, midway rides, and cherry-focused activities.",
+      "official_website_candidate": "https://www.cherryfestival.org",
+      "social_links": [],
+      "source_urls": [
+        "https://www.cherryfestival.org",
+        "https://www.michigan.org/events"
+      ],
+      "source_type": "multi_source",
+      "discovery_confidence": 0.96,
+      "semantic_notes": "Canonical statewide festival identity strongly established by official domain and tourism discovery.",
+      "duplicate_status": "possible_duplicate",
+      "possible_matches": [
+        "Traverse City Cherry Festival"
+      ],
+      "needs_review": true
+    },
+    {
+      "candidate_name": "Traverse Connect Annual Dinner",
+      "normalized_name": "Traverse Connect Annual Dinner",
+      "slug_candidate": "traverse-connect-annual-dinner",
+      "event_type": "community_event",
+      "category": "business",
+      "subcategory": "chamber_event",
+      "city": "Traverse City",
+      "county": "Grand Traverse",
+      "state": "Michigan",
+      "country": "USA",
+      "venue_name": null,
+      "start_date": null,
+      "end_date": null,
+      "typical_month": null,
+      "typical_season": null,
+      "description": "Recurring chamber annual dinner event listed on the regional chamber calendar.",
+      "official_website_candidate": null,
+      "social_links": [],
+      "source_urls": [
+        "https://business.traverseconnect.com/events"
+      ],
+      "source_type": "chamber_calendar",
+      "discovery_confidence": 0.74,
+      "semantic_notes": "Useful chamber-calendar signal; requires reviewer confirmation for public event inclusion fit.",
+      "duplicate_status": "needs_review",
+      "possible_matches": [],
+      "needs_review": true
+    }
+  ],
+  "supplier_discoveries": [],
+  "duplicate_signals": [
+    {
+      "candidate_name": "Tulip Time Festival",
+      "possible_match_name": "Tulip Time",
+      "match_score": 0.93,
+      "match_reason": "Name simplification likely represents same canonical event.",
+      "recommended_action": "merge_after_review"
+    },
+    {
+      "candidate_name": "National Cherry Festival",
+      "possible_match_name": "Traverse City Cherry Festival",
+      "match_score": 0.82,
+      "match_reason": "Geographic qualifier variant likely references same annual festival.",
+      "recommended_action": "review"
+    }
+  ],
+  "raw_discoveries": [
+    {
+      "content": "Statewide directory indicates broad event inventory across many Michigan regions.",
+      "source_name": "Michigan.org Events Directory",
+      "source_url": "https://www.michigan.org/events",
+      "source_type": "michigan_event_directory",
+      "potential_value": "High-value for next statewide batch expansion and missing county coverage.",
+      "notes": "Use as feeder source for region-specific follow-up runs."
+    }
+  ],
+  "data_health": {
+    "strongest_candidates": [
+      "National Cherry Festival",
+      "Tulip Time Festival",
+      "Allegan County Fair",
+      "Ionia Free Fair"
+    ],
+    "weakest_useful_signals": [
+      "Traverse Connect Annual Dinner"
+    ],
+    "possible_duplicates": [
+      "Tulip Time",
+      "Traverse City Cherry Festival"
+    ],
+    "missing_regions": [
+      "Upper Peninsula"
+    ],
+    "missing_event_types": [
+      "convention",
+      "expo",
+      "race"
+    ],
+    "recommended_next_searches": [
+      "Upper Peninsula county fair and tourism calendars",
+      "Detroit metro chamber calendars",
+      "Michigan.org subcategory event pages by month"
+    ],
+    "source_quality_concerns": [
+      "Chamber calendar entries may include members-only or business-networking events requiring inclusion review."
+    ]
+  }
+}

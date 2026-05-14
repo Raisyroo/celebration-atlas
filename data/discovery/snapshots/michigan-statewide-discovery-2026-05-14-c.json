@@ -1,0 +1,318 @@
+{
+  "run_metadata": {
+    "run_id": "run-michigan-statewide-2026-05-14-c",
+    "run_date": "2026-05-14",
+    "agent_name": "Michigan Event Discovery Agent",
+    "state": "Michigan",
+    "run_type": "statewide_discovery",
+    "notes": "Statewide discovery expansion batch C focused on Southeast Michigan and Metro Detroit recurring public events."
+  },
+  "discovered_sources": [
+    {
+      "source_name": "Michigan State Fair LLC",
+      "source_url": "https://www.michiganstatefairllc.com",
+      "source_type": "official_event_website",
+      "region": "Metro Detroit",
+      "trust_score": 0.95,
+      "priority": "high",
+      "notes": "Official source for recurring Michigan State Fair event in Novi."
+    },
+    {
+      "source_name": "Wyandotte Street Art Fair Official",
+      "source_url": "https://www.wyandottestreetartfair.org",
+      "source_type": "official_event_website",
+      "region": "Southeast Michigan",
+      "trust_score": 0.94,
+      "priority": "high",
+      "notes": "Official source for annual Wyandotte Street Art Fair."
+    },
+    {
+      "source_name": "Arab American National Museum ACCESS Festival",
+      "source_url": "https://www.arabamericanmuseum.org/access",
+      "source_type": "official_event_website",
+      "region": "Metro Detroit",
+      "trust_score": 0.9,
+      "priority": "high",
+      "notes": "Primary source for ACCESS heritage and arts programming in Dearborn."
+    },
+    {
+      "source_name": "National Cherry Festival Official",
+      "source_url": "https://www.cherryfestival.org",
+      "source_type": "official_event_website",
+      "region": "Northwest Michigan",
+      "trust_score": 0.97,
+      "priority": "high",
+      "notes": "Used here as reference source to avoid cross-region false duplicate assumptions."
+    },
+    {
+      "source_name": "Pure Michigan Events Directory",
+      "source_url": "https://www.michigan.org/events",
+      "source_type": "michigan_event_directory",
+      "region": "Statewide",
+      "trust_score": 0.84,
+      "priority": "high",
+      "notes": "Statewide event directory for Metro Detroit recurring event discovery."
+    },
+    {
+      "source_name": "America's Thanksgiving Parade Official",
+      "source_url": "https://theparade.org",
+      "source_type": "official_event_website",
+      "region": "Metro Detroit",
+      "trust_score": 0.96,
+      "priority": "high",
+      "notes": "Official source for Detroit Thanksgiving Parade recurrence."
+    },
+    {
+      "source_name": "Oakland County Fair Official",
+      "source_url": "https://www.oakfair.org",
+      "source_type": "county_fair_official",
+      "region": "Southeast Michigan",
+      "trust_score": 0.94,
+      "priority": "high",
+      "notes": "Official county fair source for Oakland County recurring fair."
+    }
+  ],
+  "event_candidates": [
+    {
+      "candidate_name": "Michigan State Fair",
+      "normalized_name": "Michigan State Fair",
+      "slug_candidate": "michigan-state-fair",
+      "event_type": "fair",
+      "category": "agricultural",
+      "subcategory": "state_fair",
+      "city": "Novi",
+      "county": "Oakland",
+      "state": "Michigan",
+      "country": "USA",
+      "venue_name": "Suburban Collection Showplace",
+      "start_date": null,
+      "end_date": null,
+      "typical_month": "August",
+      "typical_season": "summer",
+      "description": "Recurring late-summer state fair event featuring agriculture, food, rides, and entertainment.",
+      "official_website_candidate": "https://www.michiganstatefairllc.com",
+      "social_links": [],
+      "source_urls": [
+        "https://www.michiganstatefairllc.com",
+        "https://www.michigan.org/events"
+      ],
+      "source_type": "multi_source",
+      "discovery_confidence": 0.94,
+      "semantic_notes": "Strong recurring fair identity for Metro Detroit coverage.",
+      "duplicate_status": "possible_duplicate",
+      "possible_matches": [
+        "Michigan State Fair LLC"
+      ],
+      "needs_review": true
+    },
+    {
+      "candidate_name": "Wyandotte Street Art Fair",
+      "normalized_name": "Wyandotte Street Art Fair",
+      "slug_candidate": "wyandotte-street-art-fair",
+      "event_type": "art_fair",
+      "category": "arts",
+      "subcategory": "street_art_fair",
+      "city": "Wyandotte",
+      "county": "Wayne",
+      "state": "Michigan",
+      "country": "USA",
+      "venue_name": "Downtown Wyandotte",
+      "start_date": null,
+      "end_date": null,
+      "typical_month": "July",
+      "typical_season": "summer",
+      "description": "Recurring street art fair featuring artist vendors, crafts, and public programming.",
+      "official_website_candidate": "https://www.wyandottestreetartfair.org",
+      "social_links": [],
+      "source_urls": [
+        "https://www.wyandottestreetartfair.org",
+        "https://www.michigan.org/events"
+      ],
+      "source_type": "multi_source",
+      "discovery_confidence": 0.93,
+      "semantic_notes": "Long-running public art fair with stable naming.",
+      "duplicate_status": "unique_candidate",
+      "possible_matches": [],
+      "needs_review": true
+    },
+    {
+      "candidate_name": "Dearborn Homecoming",
+      "normalized_name": "Dearborn Homecoming",
+      "slug_candidate": "dearborn-homecoming",
+      "event_type": "festival",
+      "category": "community",
+      "subcategory": "heritage",
+      "city": "Dearborn",
+      "county": "Wayne",
+      "state": "Michigan",
+      "country": "USA",
+      "venue_name": "Ford Field Park",
+      "start_date": null,
+      "end_date": null,
+      "typical_month": "August",
+      "typical_season": "summer",
+      "description": "Recurring city homecoming festival with concerts, family attractions, and community heritage programming.",
+      "official_website_candidate": "https://www.michigan.org/events",
+      "social_links": [],
+      "source_urls": [
+        "https://www.michigan.org/events"
+      ],
+      "source_type": "michigan_event_directory",
+      "discovery_confidence": 0.82,
+      "semantic_notes": "Public recurring community event in Metro Detroit; requires additional official confirmation link in next pass.",
+      "duplicate_status": "needs_review",
+      "possible_matches": [],
+      "needs_review": true
+    },
+    {
+      "candidate_name": "ACCESS Community Arts Festival",
+      "normalized_name": "ACCESS Community Arts Festival",
+      "slug_candidate": "access-community-arts-festival",
+      "event_type": "festival",
+      "category": "cultural",
+      "subcategory": "heritage_festival",
+      "city": "Dearborn",
+      "county": "Wayne",
+      "state": "Michigan",
+      "country": "USA",
+      "venue_name": "Arab American National Museum",
+      "start_date": null,
+      "end_date": null,
+      "typical_month": "June",
+      "typical_season": "summer",
+      "description": "Recurring public cultural festival and arts-focused heritage celebration hosted through ACCESS-related programming.",
+      "official_website_candidate": "https://www.arabamericanmuseum.org/access",
+      "social_links": [],
+      "source_urls": [
+        "https://www.arabamericanmuseum.org/access",
+        "https://www.michigan.org/events"
+      ],
+      "source_type": "multi_source",
+      "discovery_confidence": 0.86,
+      "semantic_notes": "Potential naming variant risk with ACCESS arts/culture branded programming.",
+      "duplicate_status": "possible_duplicate",
+      "possible_matches": [
+        "ACCESS Festival"
+      ],
+      "needs_review": true
+    },
+    {
+      "candidate_name": "America's Thanksgiving Parade",
+      "normalized_name": "America's Thanksgiving Parade",
+      "slug_candidate": "americas-thanksgiving-parade",
+      "event_type": "parade",
+      "category": "holiday",
+      "subcategory": "thanksgiving",
+      "city": "Detroit",
+      "county": "Wayne",
+      "state": "Michigan",
+      "country": "USA",
+      "venue_name": "Woodward Avenue Corridor",
+      "start_date": null,
+      "end_date": null,
+      "typical_month": "November",
+      "typical_season": "fall",
+      "description": "Major annual Detroit holiday parade held each Thanksgiving morning with floats and performances.",
+      "official_website_candidate": "https://theparade.org",
+      "social_links": [],
+      "source_urls": [
+        "https://theparade.org",
+        "https://www.michigan.org/events"
+      ],
+      "source_type": "multi_source",
+      "discovery_confidence": 0.96,
+      "semantic_notes": "Canonical recurring holiday parade identity with strong official sourcing.",
+      "duplicate_status": "unique_candidate",
+      "possible_matches": [],
+      "needs_review": true
+    },
+    {
+      "candidate_name": "Oakland County Fair",
+      "normalized_name": "Oakland County Fair",
+      "slug_candidate": "oakland-county-fair",
+      "event_type": "fair",
+      "category": "agricultural",
+      "subcategory": "county_fair",
+      "city": "Davisburg",
+      "county": "Oakland",
+      "state": "Michigan",
+      "country": "USA",
+      "venue_name": "Springfield Oaks County Park",
+      "start_date": null,
+      "end_date": null,
+      "typical_month": "July",
+      "typical_season": "summer",
+      "description": "Recurring Oakland County Fair featuring livestock shows, carnival rides, and family entertainment.",
+      "official_website_candidate": "https://www.oakfair.org",
+      "social_links": [],
+      "source_urls": [
+        "https://www.oakfair.org",
+        "https://www.michigan.org/events"
+      ],
+      "source_type": "multi_source",
+      "discovery_confidence": 0.94,
+      "semantic_notes": "High-confidence Southeast Michigan county fair with strong recurring profile.",
+      "duplicate_status": "unique_candidate",
+      "possible_matches": [],
+      "needs_review": true
+    }
+  ],
+  "supplier_discoveries": [],
+  "duplicate_signals": [
+    {
+      "candidate_name": "Michigan State Fair",
+      "possible_match_name": "Michigan State Fair LLC",
+      "match_score": 0.78,
+      "match_reason": "Brand and organizer text overlap could represent event-vs-organization naming variant.",
+      "recommended_action": "review"
+    },
+    {
+      "candidate_name": "ACCESS Community Arts Festival",
+      "possible_match_name": "ACCESS Festival",
+      "match_score": 0.85,
+      "match_reason": "Likely branded naming variant under ACCESS cultural programming umbrella.",
+      "recommended_action": "review"
+    }
+  ],
+  "raw_discoveries": [
+    {
+      "content": "Metro Detroit holiday/parade and county fair coverage improved while avoiding business-only chamber listings.",
+      "source_name": "Pure Michigan Events Directory",
+      "source_url": "https://www.michigan.org/events",
+      "source_type": "michigan_event_directory",
+      "potential_value": "Supports next-pass validation for additional heritage and neighborhood recurring events in Wayne/Oakland/Macomb.",
+      "notes": "Focus next run on public-only neighborhood festivals and municipal calendars."
+    }
+  ],
+  "data_health": {
+    "strongest_candidates": [
+      "America's Thanksgiving Parade",
+      "Michigan State Fair",
+      "Oakland County Fair",
+      "Wyandotte Street Art Fair"
+    ],
+    "weakest_useful_signals": [
+      "Dearborn Homecoming"
+    ],
+    "possible_duplicates": [
+      "Michigan State Fair LLC",
+      "ACCESS Festival"
+    ],
+    "missing_regions": [
+      "Upper Peninsula"
+    ],
+    "missing_event_types": [
+      "convention",
+      "expo",
+      "race"
+    ],
+    "recommended_next_searches": [
+      "Municipal event calendars in Wayne and Macomb counties",
+      "Detroit neighborhood cultural festival calendars",
+      "Metro Detroit recurring winter holiday markets"
+    ],
+    "source_quality_concerns": [
+      "Some directory-only entries require official municipal or organizer-source corroboration before promotion."
+    ]
+  }
+}

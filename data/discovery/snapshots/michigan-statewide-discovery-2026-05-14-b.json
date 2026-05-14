@@ -1,0 +1,268 @@
+{
+  "run_metadata": {
+    "run_id": "run-michigan-statewide-2026-05-14-b",
+    "run_date": "2026-05-14",
+    "agent_name": "Michigan Event Discovery Agent",
+    "state": "Michigan",
+    "run_type": "statewide_discovery",
+    "notes": "Statewide discovery expansion batch B emphasizing Upper Peninsula coverage plus additional tourism/chamber/calendar signals."
+  },
+  "discovered_sources": [
+    {
+      "source_name": "Upper Peninsula State Fair Official",
+      "source_url": "https://www.upstatefair.net",
+      "source_type": "county_fair_official",
+      "region": "Upper Peninsula",
+      "trust_score": 0.95,
+      "priority": "high",
+      "notes": "Official source for annual UP State Fair."
+    },
+    {
+      "source_name": "Marquette Blueberry Festival Official",
+      "source_url": "https://www.marquetteblueberryfestival.com",
+      "source_type": "official_event_website",
+      "region": "Upper Peninsula",
+      "trust_score": 0.94,
+      "priority": "high",
+      "notes": "Primary source for annual downtown blueberry festival programming."
+    },
+    {
+      "source_name": "Sault Area Chamber Events",
+      "source_url": "https://web.saultstemarie.org/events",
+      "source_type": "chamber_calendar",
+      "region": "Upper Peninsula",
+      "trust_score": 0.77,
+      "priority": "medium",
+      "notes": "Regional chamber calendar feeder for recurring community events."
+    },
+    {
+      "source_name": "Pure Michigan Events Directory",
+      "source_url": "https://www.michigan.org/events",
+      "source_type": "michigan_event_directory",
+      "region": "Statewide",
+      "trust_score": 0.84,
+      "priority": "high",
+      "notes": "Statewide directory used as expansion source for regional events."
+    },
+    {
+      "source_name": "Mackinac Island Lilac Festival Official",
+      "source_url": "https://www.mackinacisland.org/mackinac-island-lilac-festival",
+      "source_type": "official_event_website",
+      "region": "Northern Michigan",
+      "trust_score": 0.92,
+      "priority": "high",
+      "notes": "Canonical destination source for annual lilac festival."
+    },
+    {
+      "source_name": "Cheboygan County Fair Official",
+      "source_url": "https://www.cheboygancountyfair.org",
+      "source_type": "county_fair_official",
+      "region": "Northern Michigan",
+      "trust_score": 0.93,
+      "priority": "high",
+      "notes": "Primary county fair source for Cheboygan area."
+    }
+  ],
+  "event_candidates": [
+    {
+      "candidate_name": "Upper Peninsula State Fair",
+      "normalized_name": "Upper Peninsula State Fair",
+      "slug_candidate": "upper-peninsula-state-fair",
+      "event_type": "fair",
+      "category": "agricultural",
+      "subcategory": "state_fair",
+      "city": "Escanaba",
+      "county": "Delta",
+      "state": "Michigan",
+      "country": "USA",
+      "venue_name": "UP State Fairgrounds",
+      "start_date": null,
+      "end_date": null,
+      "typical_month": "August",
+      "typical_season": "summer",
+      "description": "Major annual Upper Peninsula fair with agriculture, midway rides, and grandstand entertainment.",
+      "official_website_candidate": "https://www.upstatefair.net",
+      "social_links": [],
+      "source_urls": [
+        "https://www.upstatefair.net",
+        "https://www.michigan.org/events"
+      ],
+      "source_type": "multi_source",
+      "discovery_confidence": 0.94,
+      "semantic_notes": "Strong canonical fair identity and stable annual recurrence.",
+      "duplicate_status": "unique_candidate",
+      "possible_matches": [],
+      "needs_review": true
+    },
+    {
+      "candidate_name": "Marquette Blueberry Festival",
+      "normalized_name": "Marquette Blueberry Festival",
+      "slug_candidate": "marquette-blueberry-festival",
+      "event_type": "festival",
+      "category": "community",
+      "subcategory": "food_festival",
+      "city": "Marquette",
+      "county": "Marquette",
+      "state": "Michigan",
+      "country": "USA",
+      "venue_name": "Downtown Marquette",
+      "start_date": null,
+      "end_date": null,
+      "typical_month": "July",
+      "typical_season": "summer",
+      "description": "Annual downtown festival featuring blueberry-focused food, arts, and live entertainment.",
+      "official_website_candidate": "https://www.marquetteblueberryfestival.com",
+      "social_links": [],
+      "source_urls": [
+        "https://www.marquetteblueberryfestival.com",
+        "https://www.michigan.org/events"
+      ],
+      "source_type": "multi_source",
+      "discovery_confidence": 0.92,
+      "semantic_notes": "High-confidence recurring community festival in Upper Peninsula.",
+      "duplicate_status": "unique_candidate",
+      "possible_matches": [],
+      "needs_review": true
+    },
+    {
+      "candidate_name": "Mackinac Island Lilac Festival",
+      "normalized_name": "Mackinac Island Lilac Festival",
+      "slug_candidate": "mackinac-island-lilac-festival",
+      "event_type": "festival",
+      "category": "seasonal",
+      "subcategory": "spring_festival",
+      "city": "Mackinac Island",
+      "county": "Mackinac",
+      "state": "Michigan",
+      "country": "USA",
+      "venue_name": "Mackinac Island",
+      "start_date": null,
+      "end_date": null,
+      "typical_month": "June",
+      "typical_season": "summer",
+      "description": "Signature annual island festival built around lilac bloom season, parade, and community programming.",
+      "official_website_candidate": "https://www.mackinacisland.org/mackinac-island-lilac-festival",
+      "social_links": [],
+      "source_urls": [
+        "https://www.mackinacisland.org/mackinac-island-lilac-festival",
+        "https://www.michigan.org/events"
+      ],
+      "source_type": "multi_source",
+      "discovery_confidence": 0.93,
+      "semantic_notes": "Widely recognized recurring destination festival with stable naming.",
+      "duplicate_status": "possible_duplicate",
+      "possible_matches": [
+        "Lilac Festival Mackinac Island"
+      ],
+      "needs_review": true
+    },
+    {
+      "candidate_name": "Cheboygan County Fair",
+      "normalized_name": "Cheboygan County Fair",
+      "slug_candidate": "cheboygan-county-fair",
+      "event_type": "fair",
+      "category": "agricultural",
+      "subcategory": "county_fair",
+      "city": "Cheboygan",
+      "county": "Cheboygan",
+      "state": "Michigan",
+      "country": "USA",
+      "venue_name": "Cheboygan County Fairgrounds",
+      "start_date": null,
+      "end_date": null,
+      "typical_month": "August",
+      "typical_season": "summer",
+      "description": "Recurring county fair with livestock exhibitions, carnival rides, and local competitions.",
+      "official_website_candidate": "https://www.cheboygancountyfair.org",
+      "social_links": [],
+      "source_urls": [
+        "https://www.cheboygancountyfair.org",
+        "https://www.michigan.org/events"
+      ],
+      "source_type": "multi_source",
+      "discovery_confidence": 0.9,
+      "semantic_notes": "County fair identity appears stable across official and tourism references.",
+      "duplicate_status": "unique_candidate",
+      "possible_matches": [],
+      "needs_review": true
+    },
+    {
+      "candidate_name": "Sault Area Chamber Annual Dinner",
+      "normalized_name": "Sault Area Chamber Annual Dinner",
+      "slug_candidate": "sault-area-chamber-annual-dinner",
+      "event_type": "community_event",
+      "category": "business",
+      "subcategory": "chamber_event",
+      "city": "Sault Ste. Marie",
+      "county": "Chippewa",
+      "state": "Michigan",
+      "country": "USA",
+      "venue_name": null,
+      "start_date": null,
+      "end_date": null,
+      "typical_month": null,
+      "typical_season": null,
+      "description": "Recurring annual chamber dinner listed on Sault Area Chamber calendar.",
+      "official_website_candidate": null,
+      "social_links": [],
+      "source_urls": [
+        "https://web.saultstemarie.org/events"
+      ],
+      "source_type": "chamber_calendar",
+      "discovery_confidence": 0.72,
+      "semantic_notes": "Potentially useful regional chamber signal requiring inclusion review.",
+      "duplicate_status": "needs_review",
+      "possible_matches": [],
+      "needs_review": true
+    }
+  ],
+  "supplier_discoveries": [],
+  "duplicate_signals": [
+    {
+      "candidate_name": "Mackinac Island Lilac Festival",
+      "possible_match_name": "Lilac Festival Mackinac Island",
+      "match_score": 0.87,
+      "match_reason": "Likely naming-order variant of same recurring island event.",
+      "recommended_action": "review"
+    }
+  ],
+  "raw_discoveries": [
+    {
+      "content": "UP-focused discovery sources expanded coverage for Delta, Marquette, and Chippewa counties.",
+      "source_name": "Pure Michigan Events Directory",
+      "source_url": "https://www.michigan.org/events",
+      "source_type": "michigan_event_directory",
+      "potential_value": "Supports continued county-by-county expansion across Upper Peninsula and Northern Michigan.",
+      "notes": "Prioritize next batch with additional UP county fairs and tourism boards."
+    }
+  ],
+  "data_health": {
+    "strongest_candidates": [
+      "Upper Peninsula State Fair",
+      "Mackinac Island Lilac Festival",
+      "Marquette Blueberry Festival"
+    ],
+    "weakest_useful_signals": [
+      "Sault Area Chamber Annual Dinner"
+    ],
+    "possible_duplicates": [
+      "Lilac Festival Mackinac Island"
+    ],
+    "missing_regions": [
+      "Southeast Michigan"
+    ],
+    "missing_event_types": [
+      "convention",
+      "expo",
+      "race"
+    ],
+    "recommended_next_searches": [
+      "Detroit metro tourism calendars",
+      "UP county-level summer event PDFs",
+      "Michigan.org event listings filtered by month"
+    ],
+    "source_quality_concerns": [
+      "Chamber annual dinner listing may be business-networking focused and require reviewer inclusion screening."
+    ]
+  }
+}
