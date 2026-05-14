@@ -1,0 +1,109 @@
+{
+  "run_metadata": {
+    "run_id": "run-romeo-peach-2026-05-14",
+    "run_date": "2026-05-14",
+    "agent_name": "Michigan Event Discovery Agent",
+    "state": "Michigan",
+    "run_type": "statewide_discovery",
+    "notes": "Manual Agent 1 snapshot candidate for Romeo Peach Festival."
+  },
+  "discovered_sources": [
+    {
+      "source_name": "Romeo Peach Festival Official Website",
+      "source_url": "https://www.romeopeachfestival.com",
+      "source_type": "official_event_website",
+      "region": "Southeast Michigan",
+      "trust_score": 0.95,
+      "priority": "high",
+      "notes": "Primary canonical source for event branding and schedule references."
+    },
+    {
+      "source_name": "Visit Detroit Events",
+      "source_url": "https://visitdetroit.com/events/romeo-peach-festival",
+      "source_type": "regional_tourism_calendar",
+      "region": "Southeast Michigan",
+      "trust_score": 0.78,
+      "priority": "medium",
+      "notes": "Supporting source for regional discoverability and event summary context."
+    }
+  ],
+  "event_candidates": [
+    {
+      "candidate_name": "Romeo Peach Festival",
+      "normalized_name": "Romeo Peach Festival",
+      "slug_candidate": "romeo-peach-festival",
+      "event_type": "festival",
+      "category": "community",
+      "subcategory": "agricultural",
+      "city": "Romeo",
+      "county": "Macomb",
+      "state": "Michigan",
+      "country": "USA",
+      "venue_name": "Downtown Romeo",
+      "start_date": null,
+      "end_date": null,
+      "typical_month": "September",
+      "typical_season": "fall",
+      "description": "Recurring community festival centered on local peach harvest traditions in Romeo, Michigan.",
+      "official_website_candidate": "https://www.romeopeachfestival.com",
+      "social_links": [
+        "https://www.facebook.com/romeopeachfestival"
+      ],
+      "source_urls": [
+        "https://www.romeopeachfestival.com",
+        "https://visitdetroit.com/events/romeo-peach-festival"
+      ],
+      "source_type": "multi_source",
+      "discovery_confidence": 0.9,
+      "semantic_notes": "Long-running festival identity appears stable across official and tourism sources.",
+      "duplicate_status": "possible_duplicate",
+      "possible_matches": [
+        "Romeo Peach Festival Parade"
+      ],
+      "needs_review": true
+    }
+  ],
+  "supplier_discoveries": [],
+  "duplicate_signals": [
+    {
+      "candidate_name": "Romeo Peach Festival",
+      "possible_match_name": "Romeo Peach Festival Parade",
+      "match_score": 0.62,
+      "match_reason": "Parade naming strongly overlaps with core festival identity and may be a related sub-event.",
+      "recommended_action": "review"
+    }
+  ],
+  "raw_discoveries": [
+    {
+      "content": "Regional event pages mention parade and carnival components but may not distinguish parent event versus sub-events.",
+      "source_name": "Visit Detroit Events",
+      "source_url": "https://visitdetroit.com/events/romeo-peach-festival",
+      "source_type": "regional_tourism_calendar",
+      "potential_value": "Useful for identifying sub-event relationships and parent-child event modeling.",
+      "notes": "Needs manual review for event hierarchy mapping."
+    }
+  ],
+  "data_health": {
+    "strongest_candidates": [
+      "Romeo Peach Festival"
+    ],
+    "weakest_useful_signals": [
+      "Supporting source may merge parent festival with sub-events"
+    ],
+    "possible_duplicates": [
+      "Romeo Peach Festival Parade"
+    ],
+    "missing_regions": [],
+    "missing_event_types": [
+      "convention",
+      "expo"
+    ],
+    "recommended_next_searches": [
+      "Review village and county calendars for official date ranges",
+      "Check organizer social channels for confirmed annual schedule"
+    ],
+    "source_quality_concerns": [
+      "Supporting aggregator may not preserve clear parent/sub-event boundaries"
+    ]
+  }
+}
