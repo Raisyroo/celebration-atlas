@@ -1,3 +1,6 @@
+import { GetServerSideProps } from 'next';
+import { withAdminPageAuth } from '@/lib/adminAuth';
+
 export default function Page() {
   return (
     <main>
@@ -6,3 +9,6 @@ export default function Page() {
     </main>
   );
 }
+
+
+export const getServerSideProps: GetServerSideProps = withAdminPageAuth(async () => ({ props: {} }));
