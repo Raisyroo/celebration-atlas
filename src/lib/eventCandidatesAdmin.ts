@@ -1,12 +1,35 @@
 import { getSupabaseAdminClient } from './supabaseAdmin';
 
-export async function fetchEventCandidatesQueue(limit = 200) {
+export interface CandidateQueueFilters {
+  limit?: number;
+  state?: string;
+  county?: string;
+  duplicate_status?: string;
+  verification_status?: string;
+  needs_review?: boolean;
+  min_confidence?: number;
+  created_after?: string;
+}
+
+export async function fetchEventCandidatesQueue(filters: CandidateQueueFilters = {}) {
   const supabase = getSupabaseAdminClient();
-  return supabase
+  const limit = filters.limit ?? 200;
+
+  let query = supabase
     .from('event_candidates')
     .select('id,candidate_name,event_type,city,county,state,discovery_confidence,verification_status,duplicate_status,needs_review,created_at')
     .order('created_at', { ascending: false })
     .limit(limit);
+
+  if (filters.state) query = query.eq('state', filters.state);
+  if (filters.county) query = query.eq('county', filters.county);
+  if (filters.duplicate_status) query = query.eq('duplicate_status', filters.duplicate_status);
+  if (filters.verification_status) query = query.eq('verification_status', filters.verification_status);
+  if (typeof filters.needs_review === 'boolean') query = query.eq('needs_review', filters.needs_review);
+  if (typeof filters.min_confidence === 'number') query = query.gte('discovery_confidence', filters.min_confidence);
+  if (filters.created_after) query = query.gte('created_at', filters.created_after);
+
+  return query;
 }
 
 export async function fetchEventCandidateDetail(id: string) {

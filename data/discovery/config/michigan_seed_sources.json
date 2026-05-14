@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "state": "Michigan",
+  "categories": [
+    "county_fairs",
+    "tourism_boards",
+    "chambers_of_commerce",
+    "festival_directories",
+    "city_event_pages",
+    "state_fair_associations"
+  ],
+  "source_definitions_module": "src/lib/discoverySourceSeeds.ts",
+  "review_first": true
+}
