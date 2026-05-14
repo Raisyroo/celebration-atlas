@@ -17,23 +17,43 @@ type CandidateRow = {
   created_at: string;
 };
 
-type Props = { candidates: CandidateRow[]; error?: string };
+type Props = {
+  candidates: CandidateRow[];
+  error?: string;
+  filters: Record<string, string>;
+};
 
-export const getServerSideProps: GetServerSideProps<Props> = withAdminPageAuth(async (): Promise<GetServerSidePropsResult<Props>> => {
+export const getServerSideProps: GetServerSideProps<Props> = withAdminPageAuth(async (ctx): Promise<GetServerSidePropsResult<Props>> => {
   try {
-    const { data, error } = await fetchEventCandidatesQueue();
-    if (error) return { props: { candidates: [], error: error.message } };
-    return { props: { candidates: (data ?? []) as CandidateRow[] } };
+    const query = ctx.query;
+    const needsReview = query.needs_review === 'true' ? true : query.needs_review === 'false' ? false : undefined;
+    const minConfidence = typeof query.min_confidence === 'string' ? Number(query.min_confidence) : undefined;
+
+    const { data, error } = await fetchEventCandidatesQueue({
+      state: typeof query.state === 'string' ? query.state : 'Michigan',
+      county: typeof query.county === 'string' ? query.county : undefined,
+      duplicate_status: typeof query.duplicate_status === 'string' ? query.duplicate_status : undefined,
+      verification_status: typeof query.verification_status === 'string' ? query.verification_status : undefined,
+      created_after: typeof query.created_after === 'string' ? query.created_after : undefined,
+      needs_review: needsReview ?? true,
+      min_confidence: Number.isFinite(minConfidence) ? minConfidence : undefined,
+    });
+
+    if (error) return { props: { candidates: [], error: error.message, filters: {} } };
+    return { props: { candidates: (data ?? []) as CandidateRow[], filters: Object.fromEntries(Object.entries(query).map(([k, v]) => [k, String(v)])) } };
   } catch (err) {
-    return { props: { candidates: [], error: err instanceof Error ? err.message : 'Unknown error' } };
+    return { props: { candidates: [], error: err instanceof Error ? err.message : 'Unknown error', filters: {} } };
   }
 });
 
-export default function EventCandidatesQueuePage({ candidates, error }: Props) {
+export default function EventCandidatesQueuePage({ candidates, error, filters }: Props) {
   return (
     <main style={{ maxWidth: 1100, margin: '0 auto', padding: 24, fontFamily: 'system-ui, sans-serif' }}>
       <p><Link href="/admin">← Admin Home</Link></p>
       <h1>Event Candidates Review Queue</h1>
+      <p>Statewide triage defaults to Michigan + needs review only. Use querystring filters for high-volume review.</p>
+      <code>/admin/event-candidates?state=Michigan&needs_review=true&min_confidence=0.7&duplicate_status=possible_duplicate</code>
+      <p>Active filters: {JSON.stringify(filters)}</p>
       {error ? <p>Load error: {error}</p> : null}
       {!error && candidates.length === 0 ? <p>No candidates found.</p> : null}
       {candidates.length > 0 ? (
