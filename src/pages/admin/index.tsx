@@ -20,7 +20,8 @@ const cards = [
   { href: '/admin/verified-events', label: 'Verified Events', description: 'Browse canonical promoted event records.' },
   { href: '/admin/discovery-runs', label: 'Discovery Runs', description: 'Track discovery execution history and status.' },
   { href: '/admin/discovery-sources', label: 'Discovery Sources', description: 'Manage trusted discovery sources.' },
-  { href: '/admin/snapshot-imports', label: 'Snapshot Imports', description: 'Review import workflow and ingestion outcomes.' }
+  { href: '/admin/snapshot-imports', label: 'Snapshot Imports', description: 'Review import workflow and ingestion outcomes.' },
+  { href: '/admin/batch-intake', label: 'Batch Intake', description: 'Generate review-ready snapshot drafts from a pasted event list.' }
 ];
 
 export const getServerSideProps: GetServerSideProps<Props> = withAdminPageAuth(async (): Promise<GetServerSidePropsResult<Props>> => {
