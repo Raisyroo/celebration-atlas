@@ -40,7 +40,7 @@ function mapCandidateToEvent(candidate: any, slug: string) {
   };
 }
 
-async function tableAvailableViaRest(tableName: string) {
+async function tableAvailableViaRest(supabase: ReturnType<typeof getSupabaseAdminClient>, tableName: string) {
   const { error } = await supabase.from(tableName).select('id').limit(1);
   return !error;
 }
@@ -112,7 +112,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     let lineageSkipped = false;
     let lineageWarning: string | null = null;
 
-    const hasEventSources = await tableAvailableViaRest('event_sources');
+    const hasEventSources = await tableAvailableViaRest(supabase, 'event_sources');
     const eventSourcesOpenApiVisible = await tableExposed(url, key, 'event_sources');
     if (hasEventSources && (candidateSources?.length ?? 0) > 0) {
       const rows = (candidateSources ?? []).map((s) => ({
