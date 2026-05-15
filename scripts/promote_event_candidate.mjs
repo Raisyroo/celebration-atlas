@@ -100,7 +100,12 @@ async function resolveCandidate() {
   return data[0];
 }
 
-async function tableExists(tableName) {
+async function tableAvailableViaRest(tableName) {
+  const { error } = await supabase.from(tableName).select('id').limit(1);
+  return !error;
+}
+
+async function tableExposedInOpenApi(tableName) {
   const res = await fetch(`${SUPABASE_URL}/rest/v1/`, {
     headers: { apikey: SUPABASE_SERVICE_ROLE_KEY }
   });
@@ -124,15 +129,17 @@ try {
     .eq('candidate_id', candidate.id);
   if (sourceErr) throw sourceErr;
 
-  const hasEventSources = await tableExists('event_sources');
+  const hasEventSources = await tableAvailableViaRest('event_sources');
+  const eventSourcesInOpenApi = await tableExposedInOpenApi('event_sources');
 
   console.log('Mode:', execute ? 'EXECUTE' : 'DRY-RUN (default)');
   console.log('Candidate:', { id: candidate.id, candidate_name: candidate.candidate_name });
   console.log('Derived slug:', slug);
   console.log('Event upsert payload:', eventPayload);
   console.log('Candidate source rows:', candidateSources?.length ?? 0);
+  console.log('event_sources OpenAPI visibility:', eventSourcesInOpenApi);
   if (!hasEventSources) {
-    console.warn('WARN: public.event_sources is not exposed; lineage writes will be skipped.');
+    console.warn('WARN: public.event_sources is not available via REST probe; lineage writes will be skipped.');
   }
 
   if (!execute) {
