@@ -22,7 +22,8 @@ const cards = [
   { href: '/admin/discovery-sources', label: 'Discovery Sources', description: 'Manage trusted discovery sources.' },
   { href: '/admin/snapshot-imports', label: 'Snapshot Imports', description: 'Review import workflow and ingestion outcomes.' },
   { href: '/admin/batch-intake', label: 'Batch Intake', description: 'Generate review-ready snapshot drafts from a pasted event list.' },
-  { href: '/admin/batch-enrichment', label: 'Batch Enrichment', description: 'Enrich pasted intake snapshot candidates and generate validated preview JSON.' }
+  { href: '/admin/batch-enrichment', label: 'Batch Enrichment', description: 'Enrich pasted intake snapshot candidates and generate validated preview JSON.' },
+  { href: '/admin/batch-import-preview', label: 'Batch Import Preview', description: 'Preview import counts, validation output, and candidate summaries before any write.' }
 ];
 
 export const getServerSideProps: GetServerSideProps<Props> = withAdminPageAuth(async (): Promise<GetServerSidePropsResult<Props>> => {
