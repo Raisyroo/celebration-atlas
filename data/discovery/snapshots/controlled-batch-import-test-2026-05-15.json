@@ -1,0 +1,93 @@
+{
+  "run_metadata": {
+    "agent_name": "Michigan Event Discovery Agent",
+    "run_type": "controlled_batch_import_test",
+    "state": "Michigan",
+    "started_at": "2026-05-15T00:00:00.000Z",
+    "completed_at": "2026-05-15T00:05:00.000Z",
+    "notes": "Controlled test import with fake candidates Test Event Alpha/Beta"
+  },
+  "discovered_sources": [
+    {
+      "name": "Test Source Alpha",
+      "source_url": "https://example.test/alpha-source",
+      "source_type": "website",
+      "city": "Testville",
+      "county": "Test County",
+      "state": "Michigan",
+      "priority": "low",
+      "trust_score": 0.1,
+      "notes": "Synthetic source for controlled import test"
+    },
+    {
+      "name": "Test Source Beta",
+      "source_url": "https://example.test/beta-source",
+      "source_type": "website",
+      "city": "Mock City",
+      "county": "Mock County",
+      "state": "Michigan",
+      "priority": "low",
+      "trust_score": 0.1,
+      "notes": "Synthetic source for controlled import test"
+    }
+  ],
+  "event_candidates": [
+    {
+      "candidate_name": "Test Event Alpha",
+      "normalized_name": "test event alpha",
+      "slug_candidate": "test-event-alpha",
+      "event_type": "festival",
+      "category": "test",
+      "subcategory": "synthetic",
+      "city": "Testville",
+      "county": "Test County",
+      "state": "Michigan",
+      "country": "USA",
+      "venue_name": "Fake Venue Alpha",
+      "start_date": "2026-08-01",
+      "end_date": "2026-08-02",
+      "typical_month": "August",
+      "typical_season": "Summer",
+      "probable_recurrence": "annual",
+      "description": "Synthetic non-production test candidate Alpha.",
+      "official_website_candidate": "https://example.test/events/alpha",
+      "social_links": ["https://example.test/social/alpha"],
+      "source_urls": ["https://example.test/alpha-source"],
+      "discovery_confidence": 0.11,
+      "duplicate_status": "unique_candidate",
+      "semantic_notes": "e2e controlled test"
+    },
+    {
+      "candidate_name": "Test Event Beta",
+      "normalized_name": "test event beta",
+      "slug_candidate": "test-event-beta",
+      "event_type": "festival",
+      "category": "test",
+      "subcategory": "synthetic",
+      "city": "Mock City",
+      "county": "Mock County",
+      "state": "Michigan",
+      "country": "USA",
+      "venue_name": "Fake Venue Beta",
+      "start_date": "2026-09-10",
+      "end_date": "2026-09-11",
+      "typical_month": "September",
+      "typical_season": "Fall",
+      "probable_recurrence": "annual",
+      "description": "Synthetic non-production test candidate Beta.",
+      "official_website_candidate": "https://example.test/events/beta",
+      "social_links": ["https://example.test/social/beta"],
+      "source_urls": ["https://example.test/beta-source"],
+      "discovery_confidence": 0.12,
+      "duplicate_status": "unique_candidate",
+      "semantic_notes": "e2e controlled test"
+    }
+  ],
+  "supplier_discoveries": [],
+  "duplicate_signals": [],
+  "raw_discoveries": [],
+  "data_health": {
+    "completeness_score": 1,
+    "notes": "Synthetic test snapshot"
+  }
+}
