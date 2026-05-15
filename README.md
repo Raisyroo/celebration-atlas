@@ -84,6 +84,17 @@ Behavior:
 - runs canonical promotion only after review-state write succeeds
 - preserves existing workflow guardrail (no promotion without recorded review decision)
 
+
+## Map-readiness note (`public.events`)
+
+Map fields now live on canonical `public.events` (not `public.festivals`) via migration `supabase/migrations/202605150002_events_map_readiness.sql`.
+
+- added nullable: `latitude`, `longitude`, `location_confidence`, `location_source`, `geocoded_at`
+- added `location_verified boolean not null default false`
+- added range checks for latitude/longitude/confidence
+- added partial map index for rows with both coordinates present
+- no PostGIS extension and no backfill in this migration
+
 ## Canonical event-level source lineage (`public.event_sources`)
 
 `public.event_sources` is the canonical post-promotion lineage table for verified events in `public.events`.
