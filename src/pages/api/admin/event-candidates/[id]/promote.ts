@@ -40,6 +40,11 @@ function mapCandidateToEvent(candidate: any, slug: string) {
   };
 }
 
+async function tableAvailableViaRest(tableName: string) {
+  const { error } = await supabase.from(tableName).select('id').limit(1);
+  return !error;
+}
+
 async function tableExposed(url: string, key: string, tableName: string) {
   const res = await fetch(`${url}/rest/v1/`, { headers: { apikey: key } });
   if (!res.ok) return false;
@@ -107,7 +112,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     let lineageSkipped = false;
     let lineageWarning: string | null = null;
 
-    const hasEventSources = await tableExposed(url, key, 'event_sources');
+    const hasEventSources = await tableAvailableViaRest('event_sources');
+    const eventSourcesOpenApiVisible = await tableExposed(url, key, 'event_sources');
     if (hasEventSources && (candidateSources?.length ?? 0) > 0) {
       const rows = (candidateSources ?? []).map((s) => ({
         event_id: eventRow.id,
@@ -128,7 +134,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       }
     } else {
       lineageSkipped = true;
-      lineageWarning = 'event_sources not exposed; lineage skipped';
+      lineageWarning = 'event_sources not available via REST probe; lineage skipped';
     }
 
     const { data: updatedCandidate, error: updateErr } = await supabase
@@ -147,7 +153,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       candidate: updatedCandidate,
       slug,
       lineage_skipped: lineageSkipped,
-      lineage_warning: lineageWarning
+      lineage_warning: lineageWarning,
+      event_sources_openapi_visible: eventSourcesOpenApiVisible
     });
   } catch (err) {
     return res.status(500).json({ error: err instanceof Error ? err.message : 'Unknown error' });
