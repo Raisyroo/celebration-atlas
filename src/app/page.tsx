@@ -1,3 +1,5 @@
+import AtlasMap from '@/components/AtlasMap';
+
 export default function HomePage() {
-  return <main>Celebration Atlas foundation initialized.</main>;
+  return <AtlasMap />;
 }

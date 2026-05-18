@@ -1,0 +1,11 @@
+.hero{position:relative;height:100vh;overflow:hidden;background:radial-gradient(circle at 50% 15%,#172233,#05070c 70%);color:#f5e8c7}
+.mapFrame{position:absolute;inset:0;transform-origin:center center;transition:transform .6s ease,filter .6s ease;filter:saturate(.9) brightness(.82)}
+.mapImage{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.95}
+.vignette{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(3,4,7,.25),rgba(3,4,7,.6) 65%,rgba(3,4,7,.88));pointer-events:none}
+.marker{position:absolute;width:14px;height:14px;border-radius:999px;border:1px solid rgba(255,228,170,.95);background:radial-gradient(circle,#ffebba 8%,#f2c66a 55%,rgba(242,198,106,.15) 100%);box-shadow:0 0 6px #f2c66a,0 0 16px rgba(242,198,106,.72);transform:translate(-50%,-50%);transition:transform .2s ease,opacity .2s ease;z-index:3}
+.markerDim{opacity:.35}
+.markerActive{transform:translate(-50%,-50%) scale(1.25);box-shadow:0 0 10px #ffe4a6,0 0 24px rgba(253,208,120,.98)}
+.searchDock{position:fixed;left:0;right:0;bottom:0;padding:12px 14px calc(12px + env(safe-area-inset-bottom));backdrop-filter:blur(12px);background:linear-gradient(to top,rgba(7,9,13,.95),rgba(7,9,13,.55));z-index:20}
+.search{width:100%;padding:14px 16px;border-radius:999px;border:1px solid rgba(255,227,170,.35);background:rgba(17,20,27,.85);color:#fff7de;font-size:16px;outline:none}
+.card{position:fixed;left:12px;right:12px;bottom:86px;padding:14px;border-radius:18px;background:rgba(9,12,17,.92);border:1px solid rgba(255,225,160,.28);box-shadow:0 18px 40px rgba(0,0,0,.45);z-index:15}
+.card h3{margin:0 0 6px;font-size:18px;color:#ffebb9}.card p{margin:0;color:#f0e2c3;font-size:14px;line-height:1.35}

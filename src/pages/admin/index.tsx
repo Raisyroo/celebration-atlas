@@ -18,6 +18,7 @@ type Props = {
 const cards = [
   { href: '/admin/event-candidates', label: 'Event Candidates', description: 'Review, reject, and promote candidate events.' },
   { href: '/admin/verified-events', label: 'Verified Events', description: 'Browse canonical promoted event records.' },
+  { href: '/admin/map-readiness', label: 'Map Readiness Queue', description: 'Review and update canonical event location fields for map prep.' },
   { href: '/admin/discovery-runs', label: 'Discovery Runs', description: 'Track discovery execution history and status.' },
   { href: '/admin/discovery-sources', label: 'Discovery Sources', description: 'Manage trusted discovery sources.' },
   { href: '/admin/snapshot-imports', label: 'Snapshot Imports', description: 'Review import workflow and ingestion outcomes.' },
